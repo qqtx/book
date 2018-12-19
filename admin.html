@@ -1,0 +1,68 @@
+package task6_2_4;
+
+import java.awt.BorderLayout;
+import java.awt.Font;
+
+import javax.swing.*;
+
+public class Login_ {
+
+	public static void main(String[] args) {
+		new Login_panel("用户登录");
+
+	}
+
+}
+class Login_panel extends JFrame {
+	//new 组件
+	private JLabel namelabel,pwdlabel,titlelabel,pass;
+	private JTextField namefield;
+	private JPasswordField pwdfield;
+	private JButton loginbtn,registerbtn,cancelrtn;
+	private JPanel panel,panel1,panel2,panel3,panel21,panel22;
+	
+	public Login_panel(String title){
+		this.setTitle(title);
+		titlelabel = new JLabel("欢迎使用考试系统");
+		titlelabel.setFont(new Font("楷体",Font.BOLD,24));
+		namelabel = new JLabel("用户名");
+		pass = new JLabel("密码");
+		namefield = new JTextField(16);
+		pwdfield = new JPasswordField(16);
+		pwdfield.setEchoChar('1');
+		
+		loginbtn = new JButton("登录");
+		registerbtn = new JButton("注册");
+		cancelrtn = new JButton("取消");
+		
+		panel1 = new JPanel();
+		panel2 = new JPanel();
+		panel3 = new JPanel();
+		panel21 = new JPanel();
+		panel22 = new JPanel();
+		//添加组件
+		BorderLayout b1 = new BorderLayout();
+		setLayout(b1);
+		
+		panel1.add(titlelabel);  //标题
+		
+		panel21.add(namelabel);  //用户名
+		panel21.add(namefield);  //用户名框 
+		panel22.add(pass);       //密码框
+		panel22.add(pwdfield);  //密码输入框
+		
+		panel2.add(panel21,BorderLayout.NORTH);  //边界布局 上    用户名 标签 添加到面板 panel2
+		panel2.add(panel22,BorderLayout.SOUTH);  // 下                 密码 
+		//三个按钮
+		panel3.add(loginbtn);
+		panel3.add(registerbtn);
+		panel3.add(cancelrtn);
+		add(panel1,BorderLayout.NORTH);  //边界布局 上    标题添加到窗口
+		add(panel2,BorderLayout.CENTER);  //中
+		add(panel3,BorderLayout.SOUTH);  //下
+		this.setBounds(400,200,300,200);
+		this.setVisible(true);
+		
+	}
+	
+}
