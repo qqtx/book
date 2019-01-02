@@ -1,1 +1,1 @@
-加载网页("http:www.baidu.com")
+加载网页("http://www.baidu.com")
