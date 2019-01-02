@@ -1,11 +1,6 @@
---程序启动时会执行的事件
---程序启动时会执行的事件
+
 import 'android.webkit.WebView'
 webView.addJavascriptInterface({},'JsInterface')
-
--- 该关于仿自@音六大佬的助手关于
--- 本人@横戈 纯小白，纯模仿，
--- 如有问题，请大佬修改
 HG=
 {
   LinearLayout;
@@ -42,7 +37,6 @@ HG=
 
           {
             ImageView;
-            -- src="ht1tp://img02.sogoucdn.com/app/a/100520146/f41141eecaf9eb14e1afece3f1218257";
             layout_gravity="left";
             layout_width="40dp";
             layout_height="30dp";
