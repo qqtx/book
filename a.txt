@@ -1,1 +1,1 @@
-弹出消息("使用说明")
+加载网页("http://xiangkeyear.gz01.bdysite.com/index.php/2019/01/02/11/")
