@@ -1,1 +1,252 @@
-加载网页("http://xiangkeyear.gz01.bdysite.com/index.php/2019/01/02/11/")
+
+yuxuan={
+  LinearLayout,
+  orientation="vertical",
+  -- gravity="center";
+  id="dc",
+  {
+    --鐏
+    LinearLayout,
+    layout_height="20%h";
+    layout_width="80%w";
+    layout_gravity="center";
+    background="#00000000",
+    {
+      ImageView;
+      src="http://xiangkeyear.gz01.bdysite.com/x/xhj2.png",
+      id="xhj";
+    };
+  },
+
+  {
+    CardView;
+    layout_height="50%h";
+    layout_width="80%w";
+    layout_marginTop="0%h";
+    layout_gravity="center";
+    id="card";
+    radius="5dp",
+
+
+    {
+      --鍗＄墖鍐呭甯冨眬
+      LinearLayout,
+      orientation="vertical",
+      layout_width="fill",
+      layout_height="fill",
+      {
+        --鍗＄墖鍐呭甯冨眬
+        LinearLayout,
+        orientation="vertical",
+        layout_height="8%h";
+        layout_width="80%w";
+        layout_marginTop="0%h";
+        layout_gravity="center";
+        {
+          ImageView;
+          src="http://xiangkeyear.gz01.bdysite.com/x/xbj.png",
+          id="card_xbj";
+        };
+      },
+
+
+
+      --杞欢淇℃伅鎻愮ず寮€濮�
+      {
+        LinearLayout,
+        layout_marginTop="0%h";
+        gravity="center";
+        layout_width="fill",
+        layout_height="5%h",
+        {
+          LinearLayout,
+          orientation="horizontal",
+          gravity="center|left";
+          layout_width="40%w",
+          layout_height="5%h",
+
+          {
+            TextView;
+            textSize="13sp";
+            layout_marginLeft="5%w";
+            textColor="#FF888888";
+            text="鐗� 鏈� : ",
+          };
+          {
+            TextView;
+            text="v_2.1",
+            textSize="13sp";
+            textColor="#FF888888";
+            id="text1";
+          };
+        },
+
+        {
+          LinearLayout,
+          orientation="horizontal",
+          gravity="center|right";
+          layout_width="40%w",
+          layout_height="5%h",
+          {
+            TextView;
+            textSize="13sp";
+            textColor="#FF888888";
+            text="瀹夎鍖呭ぇ灏�: ",
+          };
+          {
+            TextView;
+            text="15.53M",
+            layout_marginRight="5%w";
+            textSize="13sp";
+            textColor="#FF888888";
+            id="text2";
+          };
+        },
+      },
+      --杞欢鎻愮ず淇℃伅缁撴潫
+      {
+        LinearLayout,
+        gravity="center|left";
+        layout_width="80%w",
+        layout_height="5%h",
+        {
+          TextView;
+          textSize="14sp";
+          layout_marginLeft="5%w";
+          textColor="#FF3f3f3f";
+          text="2.1淇鐗堟湰",
+          textStyle="bold",
+        };
+      },
+      {
+        LinearLayout,
+        gravity="left";
+        layout_width="80%w",
+        layout_height="20%h",
+        --background="#ff000000",
+        layout_marginTop="2%h";
+        {
+          TextView;
+          textSize="13sp";
+          layout_marginLeft="5%w";
+          textColor="#FF808080";
+          text="",
+          textStyle="bold",
+
+        };
+      },
+
+      {
+        Button,
+        layout_width="50%w",
+        layout_height="7%h",
+        layout_marginTop="0%h";
+        layout_gravity="center";
+        text="绔� 鍗� 鍗� 绾�",
+        textSize="18sp";
+        textColor="#ffffff";
+        id="sj",
+      },
+
+    },--鍗＄墖鍐呭甯冨眬缁撴潫
+  },--鍗＄墖甯冨眬缁撴潫
+  {
+    ImageView;
+    src="http://xiangkeyear.gz01.bdysite.com/x/qx.png",
+    layout_gravity="center";
+    layout_marginTop="3%h";
+    ColorFilter=0xFFffffff,
+    id="qx";
+  };
+
+}--甯冨眬缁撴潫
+
+
+--activity.setContentView(loadlayout(yuxuan))
+
+
+
+
+
+
+function 鎻愮ず(鍐呭)
+  toasts={
+    LinearLayout;
+    id="toastb";
+    {
+      TextView;
+      background="#ff109d58";
+      padding="8dp";
+      textSize="15sp";
+      TextColor="#ffffffff";
+      layout_width="100%w";
+      layout_height="50dp";
+      gravity="center";
+      text="鎻愮ず鍑洪敊";
+      id="text_ts";
+    };
+  };
+  local toast=Toast.makeText(activity,"鍐呭",Toast.LENGTH_LONG).setView(loadlayout(toasts))
+  --  LENGTH_SHORT     2s
+  --LENGTH_LONG      3.5s
+  toast.setGravity(Gravity.BOTTOM,0, 0)
+  --Gravity.BOTTOM   搴曢儴
+  --  Gravity.CENTER   涓儴
+  --Gravity.TOP      椤堕儴
+  text_ts.Text=tostring(鍐呭)
+  toast.show()
+end
+--璋冪敤鏂规硶
+
+
+
+dialog= AlertDialog.Builder(this)
+import "android.text.SpannableString"
+import "android.text.style.ForegroundColorSpan"
+import "android.text.Spannable"
+dialog1=dialog.show()
+
+dialog1.getWindow().setContentView(loadlayout(yuxuan));
+
+import "android.graphics.drawable.ColorDrawable"
+dialog1.getWindow().setBackgroundDrawable(ColorDrawable(0x00000000));
+
+function CircleButton(view,radiu,InsideColor,鍗婂渾)
+  import "android.graphics.drawable.GradientDrawable"
+  drawable = GradientDrawable()
+  drawable.setShape(GradientDrawable.RECTANGLE)
+  drawable.setColor(InsideColor)
+  drawable.setCornerRadii({鍗婂渾,radiu,鍗婂渾,radiu,radiu,radiu,radiu,radiu});
+  view.setBackgroundDrawable(drawable)
+end
+CircleButton(sj,360,0xff109d58,360)
+
+
+sj.onClick=function(v)
+  dialog1.dismiss()
+import "android.content.Intent"
+import "android.net.Uri"
+url="https://www.lanzous.com/b477475/"
+viewIntent =  Intent("android.intent.action.VIEW",Uri.parse(url))
+activity.startActivity(viewIntent)
+end
+
+
+
+
+qx.onClick=function(v)
+  dialog1.dismiss()
+  
+end
+
+
+
+
+
+
+
+
+
+
+
+
