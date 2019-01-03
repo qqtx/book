@@ -1,1 +1,1 @@
- 进入子页面("帮助",{标题="<感谢支持",链接="http://www.baidu.com"})
+ 进入子页面("浏览",{标题="<感谢支持",链接="http://xiangkeyear.gz01.bdysite.com/index.php/2018/02/11/thank-you/"})
