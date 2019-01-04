@@ -68,7 +68,43 @@ HG=
       -- -------------------按钮①开始
 
 
+    {
+        LinearLayout,
+        orientation="vertical",
+        background="#ffffffff",
+        layout_width="fill";
+        layout_height="53%h";--内容高度
+        {
+          CardView; 
+          layout_marginTop="0.5dp"; 
+          layout_margin="10dp";
+          layout_gravity="center";
+          elevation="3dp";
+          layout_width="fill";
+          CardBackgroundColor="#FFffffff";
+          layout_height="fill";
+          radius="8dp";
+          {
+            TextView;
+            layout_gravity="top|left";
+            layout_marginTop="10dp";
+            layout_marginLeft="15dp";
+            textSize="18sp";
+            text="BOOK v_2.4 更新详情   2019年1月4日",
+            textColor="#FF535353";
+          };
+          {
+            TextView;
+            layout_gravity="top|left";
+            layout_marginTop="50dp";
+            layout_marginLeft="20dp";
+            textSize="16sp";
+            text="BOOK v_2.4 更新详情 \n1.修复部分机型偶尔闪退\n2.修复启动软件提示检测设备时间失败\n3.修复使用说明、更新日志、检测更新出现404界面\n4.修复偶尔弹出错误提示\n5.优化设置功能\n6.优化更多功能中在线阅读资源的界面交互方式\n7.优化加载逻辑流畅度提升一点\n8.优化缓存尽可能不留垃圾\n9.更多功能-图书下载-新增资源\n10.认真阅读之外新增小故事分享功能（在评论区上线 具体上线时间公告提醒）",
+            textColor="#aa000000";
+          };
 
+        };
+      };
 
       {
         LinearLayout,
