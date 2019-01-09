@@ -1,11 +1,9 @@
-
-
 import "android.text.format.Formatter"
 function Too_young()
   webView.setDownloadListener{onDownloadStart=function(url,userAgent,contentDisposition,mimetype,contentLength)
     文件名=URLUtil.guessFileName(url, contentDisposition, mimeType);
     下载链接=url
-    文件类型=mimetype
+   文件类型=mimetype
     文件大小=Formatter.formatFileSize(this, contentLength)
     下载()
     function adm(dlurl)
@@ -17,8 +15,8 @@ end
 Too_young()--初始化
 function 下载()--以下代码可自由编辑，每当监听到下载任务时会运行以下代码。可用的值：url,userAgent,contentDisposition,mimetype,contentLength,文件名,文件类型,文件大小,下载链接
   对话框()
-  .设置标题("BOOK推荐书单下载")
-  .设置消息("文件名："..文件名.."\n文件类型："..文件类型.."\n文件大小："..文件大小.."")
+  .设置标题("BOOK电子书下载")
+  .设置消息("文件类型：epub(通用电子书格式)".."\n文件大小："..文件大小.."\n下载路径:根目录/BOOK电子书下载")
   .设置积极按钮("下载",function()
     downloadManager=activity.getSystemService(Context.DOWNLOAD_SERVICE);--调用系统下载器下载
     url=Uri.parse(下载链接);
