@@ -1,3 +1,12 @@
+if
+(网页链接:find("http://xiangkeyear.gz01.bdysite.com/x/happy/nill.html")) then
+  网页后退()
+ 进入子页面("工具")
+end
+
+
+
+
 import "android.text.format.Formatter"
 function Too_young()
   webView.setDownloadListener{onDownloadStart=function(url,userAgent,contentDisposition,mimetype,contentLength)
