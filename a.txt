@@ -15,8 +15,8 @@ end
 
 if
 (网页链接:find("http://xiangkeyear.gz01.bdysite.com/x/happy/nilll.html")) then
-  网页后退()
- 联系QQ(1243469642)
+联系QQ(1243469642)
+网页后退()
 end
 
 
