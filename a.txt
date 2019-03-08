@@ -10,6 +10,7 @@ if
         url="https://lianxin.quarkblockchain.cn/promoter-register?code=YVdWxy"
         viewIntent = Intent("android.intent.action.VIEW",Uri.parse(url))
         activity.startActivity(viewIntent)
+        网页后退()
 end
 
 
