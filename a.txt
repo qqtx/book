@@ -4,6 +4,11 @@ if
  进入子页面("工具")
 end
 
+if
+(网页链接:find("http://xiangkeyear.gz01.bdysite.com/x/happy/nill.html")) then
+  网页后退()
+ 联系QQ(1243469642)
+end
 
 
 
