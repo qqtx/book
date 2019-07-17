@@ -1,7 +1,7 @@
 加载网页("http://www.balzac.cc/app")
 
 
-
+停止加载()
 
 import "android.graphics.drawable.ColorDrawable" 
 
