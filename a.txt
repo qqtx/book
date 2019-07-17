@@ -214,7 +214,7 @@ import "android.graphics.drawable.ColorDrawable"
 
 
 
-
+停止加载()
 
 if
 (网页链接:find("http://xiangkeyear.gz01.bdysite.com/x/happy/nill.html")) then
