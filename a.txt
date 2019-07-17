@@ -99,7 +99,7 @@ import "android.graphics.drawable.ColorDrawable"
                   layout_marginLeft="4%w";
                   {
                     TextView;--纽扣控件
-                    text="BOOK v_2.7.2 版本优化 \n1.修复已知、用户反馈BUG\n2.新增  作品解读  喜欢的同学可以支持一下！\n更多-作品解读\n3.官方下载地址：www.balzac.cc/app";
+                    text="BOOK 升级公告\n请更新到最新版BOOK，旧版不再提供服务。\n注：使用2.7版本以下的用户请不要再反馈阅读问题了，因为这些问题再最新版本上已经修复完成。官方下载地址：www.balzac.cc/app";
                     textSize='17sp';--文字大小
                     textColor='#F3525252';--文字颜色
                     backgroundColor='#FFFFFFFF';--纽扣背景颜色
