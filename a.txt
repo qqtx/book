@@ -205,7 +205,7 @@ import "android.graphics.drawable.ColorDrawable"
         url="https://www.lanzous.com/b477475/"
         viewIntent = Intent("android.intent.action.VIEW",Uri.parse(url))
         activity.startActivity(viewIntent)
-
+            退出程序()
       end
 
       qx.onClick=function()
