@@ -1,3 +1,436 @@
+加载网页("http://www.balzac.cc/app")
+
+
+
+
+import "android.graphics.drawable.ColorDrawable" 
+
+
+      function 动画测试()
+        import "android.view.animation.*"--导入
+
+        lay=
+        {
+          LinearLayout,
+          orientation="vertical",
+          layout_height="fill";
+          layout_width="fill";
+          gravity="center";
+          id="dc",
+          {
+            LinearLayout,
+            orientation="vertical",
+            layout_height="match_parent";
+            layout_width="90%w";
+            id="a";
+
+            { 
+              LinearLayout,
+              orientation="vertical", 
+              -- gravity="center";
+              {
+                --火箭
+                LinearLayout,
+                layout_height="18%h";
+                layout_width="80%w";
+                layout_marginBottom='1dp';
+                layout_gravity="center";
+                background="#00000000",
+                {
+                  ImageView;
+                  src="http://bookapp.gz01.bdysite.com/tj/qd/xhj2.png",
+                  id="xhj";
+                };
+              },
+            },
+
+
+            {
+              CardView;--卡片控件
+              layout_marginBottom='9dp';--卡片边距
+              layout_gravity='center';--重力属性
+              elevation='0dp';--阴影属性
+              layout_width='76%w';--卡片宽度
+              CardBackgroundColor='#FFFFFFFF';--卡片背景颜色
+              layout_height='60%h';--卡片高度
+              radius='12dp';--卡片圆角
+
+              {
+                LinearLayout;
+                orientation='vertical';--重力属性
+                layout_width='76%w';--布局宽度
+                layout_height='77dp';--布局高度
+                background='http://bookapp.gz01.bdysite.com/tj/qd/ub.png';--布局背景颜色(或者图片路径)]]
+
+                {
+                  TextView;--文本控件
+                  layout_width='76%w';--文本宽度
+                  layout_height='45dp';--文本高度
+                  gravity='center';--重力属性
+                  textColor='#FFFFFFFF';--文字颜色
+                  text='发现新版本';--显示的文字
+                  textSize='24sp';--文字大小
+                  layout_marginTop="15dp";
+                };
+                {
+                  TextView;
+                  textSize="15sp";
+                  layout_gravity='center';--重力属性
+                  textColor="#FF888888";
+                  text="版本：v_2.7.2",
+                };
+              };
+
+
+
+              {
+                LinearLayout;
+                orientation='vertical';--重力属性
+                layout_width='76%w';--布局宽度
+                layout_height='120%h';--布局高度
+                background='#FFFFFFFF';--布局背景颜色(或者图片路径)
+                layout_marginTop="110dp";
+
+                {
+                  ScrollView,--纵向滚动
+                  layout_width='68%w';--宽
+                  layout_height='59%w';--高 活动窗口大小 按钮在空白中间高度 
+                  layout_marginTop="0dp";
+                  layout_marginLeft="4%w";
+                  {
+                    TextView;--纽扣控件
+                    text="BOOK v_2.7.2 版本优化 \n1.修复已知、用户反馈BUG\n2.新增  作品解读  喜欢的同学可以支持一下！\n更多-作品解读\n3.官方下载地址：www.balzac.cc/app";
+                    textSize='17sp';--文字大小
+                    textColor='#F3525252';--文字颜色
+                    backgroundColor='#FFFFFFFF';--纽扣背景颜色
+                    layout_width='68%w';--纽扣宽度
+                    layout_height='170dp';--纽扣高度  
+                    gravity="center|left";
+                  };
+                }; --滚动结束
+
+
+
+                {
+                  Button,
+                  layout_width="40%w",
+                  layout_height="7%h",
+                  layout_marginTop="1%h";
+                  layout_gravity="center";
+                  text="立 即 升 级",
+                  textSize="18sp";
+                  textColor="#FFffff";
+                  id="gx",
+                },
+
+              };
+            }; --卡片线性布局结束
+          };--卡片布局结束
+
+          {
+            ImageView;
+            src="http://bookapp.gz01.bdysite.com/tj/qd/qx.png",
+            layout_gravity="center";
+            layout_marginTop="3%h";
+            ColorFilter=0xFFffffff,
+            id="qx";
+          };
+        };
+
+
+
+
+        dialog= AlertDialog.Builder(this)
+        import "android.text.SpannableString"
+        import "android.text.style.ForegroundColorSpan"
+        import "android.text.Spannable"
+        dialog1=dialog.show()
+        --点击外部不消失
+        dialog1.setCanceledOnTouchOutside(false);
+        --点击返回键无响应
+        dialog1.setCancelable(true);
+
+        dialog1.getWindow().setContentView(loadlayout(lay));
+
+        import "android.graphics.drawable.ColorDrawable"
+        dialog1.getWindow().setBackgroundDrawable(ColorDrawable(0x00000000));
+
+
+
+
+        function 揭露动画(时间)
+
+          t=Ticker()
+          t.Period=0
+          t.start()
+          t.onTick=function()
+            t.stop()
+            animator = ViewAnimationUtils.createCircularReveal(dc,a.getWidth()/2.5,0,0,Math.hypot(a.getWidth(),a.getHeight()));
+            animator.setInterpolator(AccelerateInterpolator());
+            animator.setDuration(时间);
+            animator.start();
+
+          end
+
+
+  
+        end
+        揭露动画(1000)
+      end
+      动画测试()
+
+
+
+
+
+      import "android.graphics.drawable.ColorDrawable"
+      dialog1.getWindow().setBackgroundDrawable(ColorDrawable(0x00000000));
+
+      function CircleButton(view,radiu,InsideColor,半圆)
+        import "android.graphics.drawable.GradientDrawable"
+        drawable = GradientDrawable()
+        drawable.setShape(GradientDrawable.RECTANGLE)
+        drawable.setColor(InsideColor)
+        drawable.setCornerRadii({半圆,radiu,半圆,radiu,radiu,radiu,radiu,radiu});
+        view.setBackgroundDrawable(drawable)
+      end
+      CircleButton(gx,360,0xFF74C96E,360)
+
+
+
+      gx.onClick=function()
+        dialog1.dismiss()
+        import "android.content.Intent"
+        import "android.net.Uri"
+        url="https://www.lanzous.com/b477475/"
+        viewIntent = Intent("android.intent.action.VIEW",Uri.parse(url))
+        activity.startActivity(viewIntent)
+
+      end
+
+      qx.onClick=function()
+        dialog1.dismiss()
+      end
+
+
+
+
+
+
+
+import "android.graphics.drawable.ColorDrawable" 
+
+
+      function 动画测试()
+        import "android.view.animation.*"--导入
+
+        lay=
+        {
+          LinearLayout,
+          orientation="vertical",
+          layout_height="fill";
+          layout_width="fill";
+          gravity="center";
+          id="dc",
+          {
+            LinearLayout,
+            orientation="vertical",
+            layout_height="match_parent";
+            layout_width="90%w";
+            id="a";
+
+            { 
+              LinearLayout,
+              orientation="vertical", 
+              -- gravity="center";
+              {
+                --火箭
+                LinearLayout,
+                layout_height="18%h";
+                layout_width="80%w";
+                layout_marginBottom='1dp';
+                layout_gravity="center";
+                background="#00000000",
+                {
+                  ImageView;
+                  src="http://bookapp.gz01.bdysite.com/tj/qd/xhj2.png",
+                  id="xhj";
+                };
+              },
+            },
+
+
+            {
+              CardView;--卡片控件
+              layout_marginBottom='9dp';--卡片边距
+              layout_gravity='center';--重力属性
+              elevation='0dp';--阴影属性
+              layout_width='76%w';--卡片宽度
+              CardBackgroundColor='#FFFFFFFF';--卡片背景颜色
+              layout_height='60%h';--卡片高度
+              radius='12dp';--卡片圆角
+
+              {
+                LinearLayout;
+                orientation='vertical';--重力属性
+                layout_width='76%w';--布局宽度
+                layout_height='77dp';--布局高度
+                background='http://bookapp.gz01.bdysite.com/tj/qd/ub.png';--布局背景颜色(或者图片路径)]]
+
+                {
+                  TextView;--文本控件
+                  layout_width='76%w';--文本宽度
+                  layout_height='45dp';--文本高度
+                  gravity='center';--重力属性
+                  textColor='#FFFFFFFF';--文字颜色
+                  text='发现新版本';--显示的文字
+                  textSize='24sp';--文字大小
+                  layout_marginTop="15dp";
+                };
+                {
+                  TextView;
+                  textSize="15sp";
+                  layout_gravity='center';--重力属性
+                  textColor="#FF888888";
+                  text="版本：v_2.7.2",
+                };
+              };
+
+
+
+              {
+                LinearLayout;
+                orientation='vertical';--重力属性
+                layout_width='76%w';--布局宽度
+                layout_height='120%h';--布局高度
+                background='#FFFFFFFF';--布局背景颜色(或者图片路径)
+                layout_marginTop="110dp";
+
+                {
+                  ScrollView,--纵向滚动
+                  layout_width='68%w';--宽
+                  layout_height='59%w';--高 活动窗口大小 按钮在空白中间高度 
+                  layout_marginTop="0dp";
+                  layout_marginLeft="4%w";
+                  {
+                    TextView;--纽扣控件
+                    text="BOOK v_2.7.2 版本优化 \n1.修复已知、用户反馈BUG\n2.新增  作品解读  喜欢的同学可以支持一下！\n更多-作品解读\n3.官方下载地址：www.balzac.cc/app";
+                    textSize='17sp';--文字大小
+                    textColor='#F3525252';--文字颜色
+                    backgroundColor='#FFFFFFFF';--纽扣背景颜色
+                    layout_width='68%w';--纽扣宽度
+                    layout_height='170dp';--纽扣高度  
+                    gravity="center|left";
+                  };
+                }; --滚动结束
+
+
+
+                {
+                  Button,
+                  layout_width="40%w",
+                  layout_height="7%h",
+                  layout_marginTop="1%h";
+                  layout_gravity="center";
+                  text="立 即 升 级",
+                  textSize="18sp";
+                  textColor="#FFffff";
+                  id="gx",
+                },
+
+              };
+            }; --卡片线性布局结束
+          };--卡片布局结束
+
+          {
+            ImageView;
+            src="http://bookapp.gz01.bdysite.com/tj/qd/qx.png",
+            layout_gravity="center";
+            layout_marginTop="3%h";
+            ColorFilter=0xFFffffff,
+            id="qx";
+          };
+        };
+
+
+
+
+        dialog= AlertDialog.Builder(this)
+        import "android.text.SpannableString"
+        import "android.text.style.ForegroundColorSpan"
+        import "android.text.Spannable"
+        dialog1=dialog.show()
+        --点击外部不消失
+        dialog1.setCanceledOnTouchOutside(false);
+        --点击返回键无响应
+        dialog1.setCancelable(true);
+
+        dialog1.getWindow().setContentView(loadlayout(lay));
+
+        import "android.graphics.drawable.ColorDrawable"
+        dialog1.getWindow().setBackgroundDrawable(ColorDrawable(0x00000000));
+
+
+
+
+        function 揭露动画(时间)
+
+          t=Ticker()
+          t.Period=0
+          t.start()
+          t.onTick=function()
+            t.stop()
+            animator = ViewAnimationUtils.createCircularReveal(dc,a.getWidth()/2.5,0,0,Math.hypot(a.getWidth(),a.getHeight()));
+            animator.setInterpolator(AccelerateInterpolator());
+            animator.setDuration(时间);
+            animator.start();
+
+          end
+
+
+  
+        end
+        揭露动画(1000)
+      end
+      动画测试()
+
+
+
+
+
+      import "android.graphics.drawable.ColorDrawable"
+      dialog1.getWindow().setBackgroundDrawable(ColorDrawable(0x00000000));
+
+      function CircleButton(view,radiu,InsideColor,半圆)
+        import "android.graphics.drawable.GradientDrawable"
+        drawable = GradientDrawable()
+        drawable.setShape(GradientDrawable.RECTANGLE)
+        drawable.setColor(InsideColor)
+        drawable.setCornerRadii({半圆,radiu,半圆,radiu,radiu,radiu,radiu,radiu});
+        view.setBackgroundDrawable(drawable)
+      end
+      CircleButton(gx,360,0xFF74C96E,360)
+
+
+
+      gx.onClick=function()
+        dialog1.dismiss()
+        import "android.content.Intent"
+        import "android.net.Uri"
+        url="https://www.lanzous.com/b477475/"
+        viewIntent = Intent("android.intent.action.VIEW",Uri.parse(url))
+        activity.startActivity(viewIntent)
+
+      end
+
+      qx.onClick=function()
+        dialog1.dismiss()
+      end
+
+
+
+
+
 if
 (网页链接:find("http://xiangkeyear.gz01.bdysite.com/x/happy/nill.html")) then
   网页后退()
